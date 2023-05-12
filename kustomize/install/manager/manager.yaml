@@ -16,11 +16,15 @@ spec:
       labels:
         postgres-operator.crunchydata.com/control-plane: postgres-operator
     spec:
+      volume:
+      - name: pgo
+      persistentVolumeClaim:
+        claimName: pgo-pvc-vsp-5600h
       containers:
       - name: operator
         image: postgres-operator
         env:
-        - name: PGO_NAMESPACE
+        - name: pgo
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace

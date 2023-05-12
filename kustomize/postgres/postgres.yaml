@@ -8,6 +8,7 @@ spec:
   instances:
     - name: instance1
       dataVolumeClaimSpec:
+        storageClassName: hspc-vsp5600h
         accessModes:
         - "ReadWriteOnce"
         resources:
